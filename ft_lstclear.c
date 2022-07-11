@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 14:36:47 by plau              #+#    #+#             */
-/*   Updated: 2022/07/11 16:31:10 by plau             ###   ########.fr       */
+/*   Updated: 2022/07/11 20:24:08 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,15 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t-list	*tmp;
+	t_list	*tmp;
 
 	if (!lst)
 		return ;
 	while (*lst)
 	{
 		tmp = (*lst)->next;
-		(*del)(*lst)->content;
+		(*del)((*lst)->content);
 		free(*lst);
-		*lst = 0;
+		*lst = tmp;
 	}
 }
-

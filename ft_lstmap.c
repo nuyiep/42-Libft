@@ -1,22 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 10:56:55 by plau              #+#    #+#             */
-/*   Updated: 2022/07/11 20:38:22 by plau             ###   ########.fr       */
+/*   Created: 2022/07/11 18:20:04 by plau              #+#    #+#             */
+/*   Updated: 2022/07/11 21:03:19 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (!lst)
+	t_list	*tmp;
+	t_list	*new;
+
+	if (!lst || !f)
 		return (NULL);
-	while (lst->next != NULL)
+	new = NULL;
+	while (lst)
+	{
+		tmp = ft_lstnew(f(lst->content));
+		if (!tmp)
+		{
+			ft_lstclear(&tmp, del);
+			return (NULL);
+		}
+		else
+			ft_lstadd_back(&new, tmp);
 		lst = lst->next;
-	return (lst);
+	}
+	return (new);
 }
+/*
+ft_lstclear(&tmp, del); //delete and free the given node
+ft_lstadd_back(&new, tmp); //add the node "new" at the end of the list
+*/

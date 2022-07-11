@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 18:10:10 by plau              #+#    #+#             */
-/*   Updated: 2022/07/10 16:50:37 by plau             ###   ########.fr       */
+/*   Updated: 2022/07/11 21:03:41 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	d = dst;
 	s = src;
 	i = 0;
-	if (!dst && !src)
+	if (!dst || !src)
 		return (0);
 	while (i < n)
 	{

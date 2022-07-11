@@ -19,7 +19,12 @@ SRCS    	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 				ft_putnbr_fd.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 				ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
 				ft_lstiter.c ft_lstmap.c 
-OBJS    = $(SRCS:.c=.o)
+BONUS		= ft_lstmap.c ft_lstiter.c ft_lstclear.c ft_lstdelone.c \
+				ft_lstadd_back.c ft_lstlast.c ft_lstsize.c \
+				ft_lstadd_front.c ft_lstnew.c
+				
+OBJS    	= $(SRCS:.c=.o)
+BOBJS		= $(BONUS:.c=.o)
 
 all:	$(NAME)
 
@@ -28,6 +33,9 @@ $(NAME):	$(OBJS)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I $(HEADER) -o $@ -c $<
+
+bonus:	$(OBJS) $(BOBJS)
+				$(AR) $(NAME) $(OBJS) $(BOBJS)
 
 clean:
 		rm -rf $(OBJS)
