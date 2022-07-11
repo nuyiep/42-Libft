@@ -6,7 +6,7 @@
 #    By: plau <plau@student.42.kl>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/04/04 19:22:36 by alelievr          #+#    #+#              #
-#    Updated: 2022/07/10 16:17:02 by plau             ###   ########.fr        #
+#    Updated: 2022/07/11 16:35:55 by plau             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 #################
 
 #	Libft Makefile path
-LIBFTDIR	=	/Users/plau/Libft-Tester
+LIBFTDIR	=	/Users/plau/42-Libft
 
 #	Sources
 SRCDIR		=	./

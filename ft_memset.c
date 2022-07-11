@@ -6,7 +6,7 @@
 /*   By: plau <plau@student.42.kl>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 18:01:20 by plau              #+#    #+#             */
-/*   Updated: 2022/07/10 16:47:45 by plau             ###   ########.fr       */
+/*   Updated: 2022/07/11 16:36:59 by plau             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,6 @@ void	*ft_memset(void *b, int c, size_t len)
 		len--;
 	}
 	return (b);
-}
-
-int swap(int a, int b)
-{
-	int temp;
-	
-	temp = a;
-	a = b;
-	b = temp;
 }
 
 /*
